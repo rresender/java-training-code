@@ -29,6 +29,7 @@ public class TheTimeInWords {
         assertThat(theTimeInWords(5, 45), is("quarter to six"));
         assertThat(theTimeInWords(4, 47), is("thirteen minutes to five"));
         assertThat(theTimeInWords(6, 35), is("twenty five minutes to seven"));
+        assertThat(theTimeInWords(4, 27), is("twenty seven minutes past four"));
     }
     
     private String theTimeInWords(int h, int m) {

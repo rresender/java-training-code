@@ -1,4 +1,4 @@
-package com.resende.codesignal;
+package com.rresende.codesignal;
 
 import java.util.HashMap;
 import java.util.Map;

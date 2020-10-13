@@ -1,4 +1,4 @@
-package com.resende.codesignal;
+package com.rresende.codesignal;
 
 public class LinkedList<T> {
 

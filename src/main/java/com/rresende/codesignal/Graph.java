@@ -1,4 +1,4 @@
-package com.resende.codesignal;
+package com.rresende.codesignal;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.resende.codesignal;
+package com.rresende.codesignal;
 public class FindProfession {
 
 	static String findProfession(int level, int pos) {

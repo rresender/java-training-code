@@ -1,4 +1,4 @@
-package com.resende.codesignal;
+package com.rresende.codesignal;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.rresende.codesignal;
+package com.rresende.hackerrank;
 
 import java.util.Arrays;
 

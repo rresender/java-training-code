@@ -65,25 +65,16 @@ public class MrxAndHisShots {
 			}
 		}
 	}
-	
+
 	static int solve(int[][] shots, int[][] players) {
-
-		int[] start = new int[shots.length];
-		int[] end = new int[shots.length];
-
-		for (int i = 0; i < shots.length; i++) {
-			start[i] = shots[i][0];
-			end[i] = shots[i][1];
-		}
-
-		Arrays.sort(start);
-		Arrays.sort(end);
-
+		final int[] start = Arrays.stream(shots).map(s -> s[0]).sorted().mapToInt(i -> i).toArray();
+		final int[] end = Arrays.stream(shots).map(s -> s[1]).sorted().mapToInt(i -> i).toArray();
 		int count = 0;
-
-		for (int[] player : players) 
-			count += right(start, player[1]) - left(end, player[0]);
-
+		for (int[] player : players) {
+			int right = right(start, player[1]);
+			int left = left(end, player[0]);
+			count += right - left;
+		}
 		return count;
 	}
 

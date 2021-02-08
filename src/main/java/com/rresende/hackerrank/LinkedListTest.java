@@ -13,6 +13,13 @@ public class LinkedListTest {
 	static class Node {
 		int data;
 		Node next;
+		
+		Node() {
+			
+		}
+		Node(int x) {
+			data = x;
+		}
 		@Override
 		public String toString() {
 			return "Node [data=" + data + ", next=" + next + "]";
@@ -247,6 +254,36 @@ public class LinkedListTest {
 		return 1;
 	}
 	
+	
+	Node mergeTwoLinkedListsRec(Node l1, Node l2) {
+	    if(l1==null) return l2;
+	    if(l2==null) return l1;
+	    if(l1.data<l2.data) {
+	        l1.next = mergeTwoLinkedListsRec(l1.next, l2);
+	        return l1;
+	    } else {
+	        l2.next = mergeTwoLinkedListsRec(l1, l2.next);
+	        return l2;
+	    }
+	}
+	
+	
+	Node mergeTwoLinkedLists(Node l1, Node l2) {
+	    Node f = new Node(0), p = f;
+	    while (l1 != null && l2 != null) {
+	        if (l1.data < l2.data) {
+	            p.next = l1;
+	            l1 = l1.next;
+	        } else {
+	            p.next = l2;
+	            l2 = l2.next;
+	        }
+	        p = p.next;
+	    }
+	    p.next = l1 != null ? l1 : l2;
+	    return f.next;
+	}
+	
 	Node mergeLists(Node headA, Node headB) {
 		
 		if (headA == null && headB == null) {
@@ -277,7 +314,7 @@ public class LinkedListTest {
 	    
 	    Node head = new Node();
 	    head.data = set.first();
-	    Boolean first = true;
+	    boolean first = true;
 	    for (Integer data : set) {
 	    	if (first) {
 	    		first = false;
@@ -327,7 +364,7 @@ public class LinkedListTest {
 			return null;
 		}
 
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> map = new HashMap<>();
 		List<Integer> delete = new ArrayList<>();
 		
 		int pos = 0;

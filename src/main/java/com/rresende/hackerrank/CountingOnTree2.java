@@ -67,14 +67,14 @@ public class CountingOnTree2 {
         if (idx == 0) {
             Set<Long> set = m.get(value);
             if (set == null) {
-                set = new HashSet<Long>();
+                set = new HashSet<>();
                 m.put(value, set);
             }
-            set.add(new Long(node));
+            set.add((long)node);
             return 0;
         }
         Set<Long> set = m.get(value);
-        return acc + (set == null ? 0 : set.size() + (set.contains(new Long(node)) ? -1 : 0));
+        return acc + (set == null ? 0 : set.size() + (set.contains((long)node) ? -1 : 0));
     }
 
 }

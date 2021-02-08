@@ -15,7 +15,7 @@ import org.junit.runner.notification.Failure;
 
 public class PalindromePermutation {
 
-	public static boolean hasPalindromePermutation_(String theString) {
+	public static boolean hasPalindromePermutation2(String theString) {
 		int n = theString.length();
 		if (n <= 1) {
 			return true;

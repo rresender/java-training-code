@@ -1,7 +1,7 @@
 package com.rresende.hackerrank;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,7 +64,7 @@ public class QHEAP1 {
                     min.add(s.peek());
                 }
                 else if (o == 2) {
-                    Integer x = new Integer(in.nextInt());
+                    Integer x = in.nextInt();
                     min.remove(x);
                     s.remove(x);
                 }
